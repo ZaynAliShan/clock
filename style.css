@@ -1,0 +1,132 @@
+ *. *::after, *::before {
+ 	box-sizing: border-box;
+ 	font-family: 'Varela Round', sans-serif;
+ }
+ body {
+    background: linear-gradient(to right, rgb(88, 125, 213), rgb(192, 156, 93));
+    /*using body to center align everything*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Fjalla One', sans-serif;
+    /* overflow: auto; */
+ } 
+ .clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+ }
+ /*giving height and width to numbers and aligning*/
+ .clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    text-align: center;
+/*    transform: rotate(45deg);*/ /*it rotates the entire container*/
+  /*we need different values of rotate so...*/
+  transform: rotate(var(--rotation));
+  font-size: 1.5rem;
+ }
+
+/*==------- Rotating numbers using rotation varibale in above class*/
+ .clock .number1 { --rotation: 30deg; }
+ .clock .number2 { --rotation: 60deg; }
+ .clock .number3 { --rotation: 90deg; }
+ .clock .number4 { --rotation: 120deg; }
+ .clock .number5 { --rotation: 150deg; }
+ .clock .number6 { --rotation: 180deg; }
+ .clock .number7 { --rotation: 210deg; }
+ .clock .number8 { --rotation: 240deg; }
+ .clock .number9 { --rotation: 270deg; }
+ .clock .number10 { --rotation: 300deg; }
+ .clock .number11 { --rotation: 330deg; }
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+/*    width: 10px;
+    height: 50%;*/
+    border: 1px solid white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: black;
+    transform-origin: bottom;
+    z-index: 10; /*always be on top of our number*/
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    /*making variable rotation for hands, we'll set it in JS*/
+}
+
+/*going to add new content to DOM*/
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*hands customising*/
+.clock .hand.second {
+    width: 2px;
+    height: 45%;
+    background-color: red;
+}
+.clock .hand.minute {
+    width: 7px;
+    height: 40%;
+    background-color: saddlebrown;
+}
+.clock .hand.hour {
+    width: 10px;
+    height: 33%;
+    background-color: black;
+}
+footer {
+    font-family: 'Raleway', sans-serif;
+    position: fixed;
+    /*left: 0;*/
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+#color {
+    color: black;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.fa-github , .fa-linkedin{
+    font-size: 24px;
+}
+.fa-github:hover , .fa-linkedin:hover{
+    color: black;
+}
+header {
+  font-family: 'Raleway', sans-serif;
+  top: 7.5%;
+  position: fixed;
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 900;
+}
