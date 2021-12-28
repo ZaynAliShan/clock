@@ -94,7 +94,7 @@
     height: 33%;
     background-color: black;
 }
-footer {
+/* footer {
     font-family: 'Raleway', sans-serif;
     position: fixed;
     /*left: 0;*/
@@ -105,7 +105,7 @@ footer {
     color: white;
     font-size: 20px;
     text-decoration: none;
-}
+} */
 #color {
     color: black;
     text-decoration: none;
@@ -114,7 +114,7 @@ a {
     text-decoration: none;
     color: white;
 }
-.fa-github , .fa-linkedin{
+/* .fa-github , .fa-linkedin{
     font-size: 24px;
 }
 .fa-github:hover , .fa-linkedin:hover{
@@ -129,4 +129,4 @@ header {
   font-size: 28px;
   font-style: italic;
   font-weight: 900;
-}
+} */
